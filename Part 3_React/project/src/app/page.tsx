@@ -1,6 +1,6 @@
 import ItemList from './components/ItemList';
 // import ContactForm from './components/widgets/ContactForm';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         {/* for using widget */}
         <div className='widget-contact-form'></div>
       </div>
-      <Script src='/widget/index.js' />
+      {/* <Script src='/widget/index.js' /> */}
     </main>
   );
 }

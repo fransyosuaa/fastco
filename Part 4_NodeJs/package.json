@@ -1,0 +1,21 @@
+{
+  "name": "part-4_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "read:csv": "node ./readCsv.js",
+    "task:3": "node ./task3.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "unclefrans",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "csv": "^6.3.3",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.5.0"
+  }
+}
