@@ -1,0 +1,26 @@
+.h2 {
+  font-weight: bold;
+}
+
+.table {
+  width: 100%;
+  div {
+    display: flex;
+    div {
+      justify-content: center;
+      font-weight: bold;
+      width: 30%;
+    }
+  }
+}
+
+.table-child {
+  display: flex;
+  div {
+    justify-content: right !important;
+    font-weight: 400 !important;
+  }
+  div:nth-child(1) {
+    justify-content: left !important;
+  }
+}

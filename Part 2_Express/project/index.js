@@ -16,6 +16,13 @@ const userSchema = new mongoose.Schema({
 });
 const User = mongoose.model('User', userSchema);
 
+const itemSchema = new mongoose.Schema({
+  name: String,
+  stock: Number,
+  price: Number,
+});
+const Item = mongoose.model('Item', itemSchema);
+
 app.use(loggerMiddleware);
 
 app.post('/insert', (req, res) => {
@@ -31,6 +38,16 @@ app.post('/insert', (req, res) => {
   res.send({ message: 'Successfully inserted data!!' });
 });
 
+app.post('/insert/item-part-3', (req, res) => {
+  for (let i = 0; i < 100; i++) {
+    const stock = Math.floor(Math.random() * 300) + 1;
+    const price = Math.floor(Math.random() * 100000) + 1000;
+    const item = new Item({ name: `item-${i + 1}`, stock, price });
+    Item.create(item);
+  }
+  res.send({ message: 'Successfully inserted data!!' });
+});
+
 app.post('/upload', upload.single('file'), (req, res) => {
   const oldPath = req.file.path;
   const newPath = `${req.file.destination}${req.file.originalname}`;
@@ -39,10 +56,18 @@ app.post('/upload', upload.single('file'), (req, res) => {
 });
 
 app.get('/', async (req, res) => {
-  const users = await User.find();
+  const data = await User.find();
   res.send({
     message: 'Successfully get data!!',
-    data: users,
+    data,
+  });
+});
+
+app.get('/item', async (req, res) => {
+  const data = await Item.find();
+  res.send({
+    message: 'Successfully get data!!',
+    data,
   });
 });
 
