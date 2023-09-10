@@ -5,3 +5,5 @@
 ## Write a function that validates user input for a MERN stack application and returns an error message if the input is invalid.
 
 ## Create a feature that allows users to search for blog posts by keyword, with the search functionality implemented on both the client and server sides.
+
+I create both backend and frontend project. Please run it both.
