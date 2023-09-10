@@ -16,7 +16,7 @@ after (csv collection is added)
 
 - I create express server. Same like Part 2 task.
 
-### To create user account task, I create entrypoint `POST /insert`
+### To create user account task, I create entrypoint `POST /user`
 
 before
 ![Alt text](image-2.png)

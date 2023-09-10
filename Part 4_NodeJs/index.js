@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
 });
 const User = mongoose.model('User', userSchema);
 
-app.post('/insert', (req, res) => {
+app.post('/user', (req, res) => {
   const { name, age } = req.body;
   const user = new User({ name, age });
   User.create(user);

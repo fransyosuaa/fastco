@@ -61,12 +61,12 @@ npm run dev
 
 ```
 POST
-localhost:3000/insert
+localhost:2000/users
 ```
 
 4. For get data hit this API
 
 ```
 GET
-localhost:3000
+localhost:2000/users
 ```

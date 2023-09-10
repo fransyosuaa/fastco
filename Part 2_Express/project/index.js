@@ -5,7 +5,7 @@ const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: 'files/' });
 
-const port = 3000;
+const port = 2000;
 const app = express();
 
 mongoose.connect('mongodb://127.0.0.1:27017/fastCoDB');
@@ -25,7 +25,7 @@ const Item = mongoose.model('Item', itemSchema);
 
 app.use(loggerMiddleware);
 
-app.post('/insert', (req, res) => {
+app.post('/users', (req, res) => {
   const user1 = new User({
     name: 'Frans',
     age: 35,
@@ -55,7 +55,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
   res.send({ message: 'Successfully upload file to server!!' });
 });
 
-app.get('/', async (req, res) => {
+app.get('/users', async (req, res) => {
   const data = await User.find();
   res.send({
     message: 'Successfully get data!!',
@@ -63,7 +63,7 @@ app.get('/', async (req, res) => {
   });
 });
 
-app.get('/item', async (req, res) => {
+app.get('/items', async (req, res) => {
   const data = await Item.find();
   res.send({
     message: 'Successfully get data!!',

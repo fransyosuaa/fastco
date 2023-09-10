@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 import axios from 'axios';
 import { getNRandomData } from '@/app/utils';
 
-const expressUrl = 'http://127.0.0.1:3000';
+const expressUrl = 'http://127.0.0.1:2000';
 
 export async function GET(request) {
-  const res = await axios.get(`${expressUrl}/item`);
+  const res = await axios.get(`${expressUrl}/items`);
   const {
     data: { data: result },
   } = res;
