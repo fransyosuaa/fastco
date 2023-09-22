@@ -39,7 +39,7 @@ const ScheduleLayout = () => {
   const handleEdit = async (id) => {
     setScheduleId(id);
     setFormMode('edit');
-    const selectedData = schedList.filter((k) => k._id === id)[0];
+    const selectedData = schedList.find((k) => k._id === id);
     setFormData({
       name: selectedData.name,
       time: selectedData.time,
