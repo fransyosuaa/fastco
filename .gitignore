@@ -1,2 +1,5 @@
 **/node_modules
 Part 2_Express/project/files
+.env
+.env.development
+.env.production

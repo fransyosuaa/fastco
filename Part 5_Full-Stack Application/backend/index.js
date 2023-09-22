@@ -5,7 +5,7 @@ const loggerMiddleware = require('./middleware/loggerMiddleware');
 const scheduleController = require('./controller/scheduleController');
 const blogController = require('./controller/blogController');
 
-const port = 5100;
+const port = process.env.PORT || 5100;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

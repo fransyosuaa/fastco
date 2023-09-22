@@ -1,9 +1,24 @@
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/fastCoDB');
+const {
+  MONGODB_PROTOCOL,
+  MONGODB_HOST,
+  MONGODB_PORT,
+  MONGODB_DBNAME,
+  MONGODB_USERNAME,
+  MONGODB_PASSWORD,
+  ENV,
+} = process.env;
+let urlMongoose = `${MONGODB_PROTOCOL}://${MONGODB_HOST}:${MONGODB_PORT}/${MONGODB_DBNAME}`;
+if (ENV === 'production') {
+  urlMongoose = `${MONGODB_PROTOCOL}://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_HOST}/${MONGODB_DBNAME}`;
+}
+mongoose.connect(urlMongoose);
+
 const scheduleSchema = new mongoose.Schema({
   name: String,
   time: String,
