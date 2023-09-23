@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
-const expressUrl = 'http://127.0.0.1:5100';
+const expressUrl = process.env.API_HOST;
 
 export async function GET() {
   const res = await axios.get(`${expressUrl}/schedule`);
